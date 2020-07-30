@@ -1,0 +1,110 @@
+# Copyright (c) 2020 Jaron Nix <jaron@pathware.com>
+
+# Project information
+site_name: Pathware Series A
+site_url: https://invest.pathware.com
+site_author: Jaron Nix
+site_description: >-
+  Discover the go-to-market strategy of Pathware Inc, a medical technology startup headquartered in Seattle, Washington.
+
+theme:
+  name: material
+  languages: en
+  palette:
+    primary: blue grey
+  font:
+    text: Inter, sans-serif;
+    code: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  features: 
+    #instant
+    - tabs
+  favicon: images/favicon.png
+  logo: images/pathware-mono-inverse-icon.png
+
+extra_javascript:
+  - javascript/extra.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  # enables admonitions
+  - admonition
+  # renders admonitions collapsible
+  - pymdownx.details
+  # enables tabs (within a page)
+  - pymdownx.tabbed
+  # enables citation of sources
+  - footnotes
+  # Enables inline math equations
+  - pymdownx.arithmatex:
+      generic: true
+  # Custom Inline Formatting
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
+nav:
+  # Executive Summary (Home)
+  - Overview: ./pages/overview/executive_summary.md
+
+  # Market Tab
+  - The Market: 
+
+    - The Problem:
+      - A Declining Workforce: ./pages/market/problem/pathologist-shortage.md
+      - Frequent Biopsy Failures: ./pages/market/problem/biopsy-failure.md
+      - Diagnostic Errors: ./pages/market/problem/diagnostic-errors.md
+    
+    - Industry Trends:
+      - Cancer: ./pages/market/trends/cancer.md
+      - Biopsies: ./pages/market/trends/biopsies.md
+      - Digital Pathology: ./pages/market/trends/digital-pathology.md
+      - Pathologists: ./pages/market/trends/physicians.md
+
+    - Rapid On-site Evaluation: ./pages/market/rose.md
+
+    - Domestic Market Opportunity: ./pages/market/market-us.md
+    - Global Market Opportunity: ./pages/market/market-global.md
+
+  # Product Tab   
+  - The Product:
+    - Image Capture Module:
+      - Machine Learning: ./pages/sci-tech/analytics.md
+      - Ptychographic Microscopy: ./pages/sci-tech/fpm.md
+      - User Experience Design: ./pages/sci-tech/uxd.md
+    - Cloud Services: ./pages/sci-tech/cloud-services.md
+    - PhaseStain: ./pages/sci-tech/digital-stain.md
+  
+  # Strategy Tab
+  - Strategy: 
+    - Sales: ./pages/strategy/sales.md
+    - Go-to-Market: 
+      - Product-market Fit: ./pages/strategy/product-market-fit.md
+      - Competition: ./pages/strategy/competition.md
+      - Market Trends: ./pages/strategy/trends.md
+    - Regulatory: ./pages/strategy/regulatory.md
+    - Intellectual Property:
+      - Patents: ./pages/strategy/patents.md
+      - Trademarks: ./pages/strategy/trademarks.md
+      - Data: ./pages/strategy/proprietary-data.md
+    
+  # Team Tab
+  - The Team:
+    - Page 4.1
+    - Page 4.2
+    - Page 4.3
+
+  # Models Tab
+  - Models:
+    - Business Model: ./pages/models/business-model.md
+    - Financials: ./pages/models/financials.md
+    - Exit Scenarios: ./pages/models/exit-scenarios.md
+
+  # Invest Tab
+  - Investment Opportunity:
+    - Ask and Use: ./pages/invest/ask_and_use.md
+    - Detailed Uses:
+      - Operations: ./pages/invest/use-of-funds-operations.md
+      - Research & Development: ./pages/invest/use-of-funds-development.md
+      - General & Administrative: ./pages/invest/use-of-funds-general.md
+      - Sales & Marketing: ./pages/invest/use-of-funds-marketing.md

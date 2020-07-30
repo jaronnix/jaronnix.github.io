@@ -1,0 +1,1 @@
+`$0.5MM` will be allocated to Sales and Marketing expenses for the regular attendance of conference exhibitions and to ensure that we achieve an accelerated launch date of Q2 2021.
