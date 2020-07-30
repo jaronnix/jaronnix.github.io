@@ -1,0 +1,1 @@
+`$1.25MM` will be allocated to G&A expenses for De Novo regulatory clearance as well as global filings of our intellectual property.

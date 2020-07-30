@@ -1,0 +1,1 @@
+`$0.75MM` will be allocated to operations in order to maintain a quality management system and supply chain.

@@ -1,0 +1,13 @@
+[data-md-color-scheme="pathware"] {
+  --md-primary-fg-color:        #0d1a26;
+  --md-text-link-color:         #f33;
+  --md-typeset-a-color:         #0d1a26;
+}
+
+.md-nav__link:hover {
+  color: #f33;
+}
+
+.md-nav a:hover {
+  color: #f33;
+}
