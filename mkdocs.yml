@@ -42,10 +42,26 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
+  # Enables Emojis and Icons
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 nav:
   # Executive Summary (Home)
-  - Overview: ./pages/overview/executive_summary.md
+  - Our Mission: ./pages/overview/mission.md
+  - The Problem: ./pages/overview/problem.md
+  - The Solution: ./pages/overview/solution.md
+  - The Product: ./pages/overview/product.md
+  - The Market: ./pages/overview/market.md
+  - Regulatory Affairs: ./pages/overview/regulatory.md
+  - Intellectual Property: ./pages/overview/patent.md
+  - Our Revenue: ./pages/overview/revenue.md
+  - Our Competition: ./pages/overview/competition.md
+  - Our Partners: ./pages/overview/partners.md
+  - Our Management: ./pages/overview/leadership.md
+  - Future Development: ./pages/overview/roadmap.md
+  - Ask & Use of Funds: ./pages/overview/investment.md
 
   # Market Tab
   - The Market: 

@@ -1,5 +1,12 @@
 # Pathware Series A
 
+!!! tip ""
+    Only have 5 minutes? Check the sidebar to the left for an abbreviated introduction to our company.
+
+[LINK TO EXEC SUMMARY PDF]
+
+[LINK TO READING DECK PDF]
+
 For full documentation please contact [Michael Moore](mailto:michael@pathware.com).
 
 ## Commands

@@ -1,0 +1,5 @@
+[SERIOUS REWORK NEEDED]
+
+All matters of the Bioptic™ reader must adhere to Current Good Manufacturing Practice (cGMP) regulations enforced by the FDA in 21 CFR Subpart H. Pathware has filed a 513(g) application to obtain an FDA confirmation regarding the classification of the Bioptic™ Unit as a Class I device via the De Novo Pathway in May of 2019. We have completed much of the documentation for a Class I device submission and are currently preparing for a Pre-Submission meeting in Q4 2019. Full Regulatory clearance is anticipated in Q2 2021. Our financial model estimates cost for ongoing business operations as well as the additional resources needed to navigate the FDA process. Furthermore, Pathware will apply for ISO certifications and CE mark to market the product in the US and Internationally.
+
+[LINKOUT TO REGULATORY STRATEGY]

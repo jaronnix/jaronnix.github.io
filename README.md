@@ -16,4 +16,8 @@ This is an [admonition](https://squidfunk.github.io/mkdocs-material/reference/ad
 ### Content Tabs
 These are [Content Tabs](https://squidfunk.github.io/mkdocs-material/reference/content-tabs/).
 
+## Icons
+1. We use [Octicons](https://primer.style/octicons/). 
+2. To implement them, follow [this guide](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#emoji).
+
 Author: Jaron Nix
