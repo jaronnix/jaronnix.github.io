@@ -124,7 +124,7 @@ nav:
 
   # Invest Tab
   - Investment Opportunity:
-    - Ask and Use: ./pages/invest/ask_and_use.md
+    - Ask and Use: ./pages/invest/ask-and-use.md
     - Detailed Uses:
       - Operations: ./pages/invest/use-of-funds-operations.md
       - Research & Development: ./pages/invest/use-of-funds-development.md

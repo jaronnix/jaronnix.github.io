@@ -17,7 +17,7 @@ Mobile lab carts allow a pathologist to attend the procedure and assess the tiss
 
     Located in `Milan, Italy`
 
-    !!! caution "Disadvantages"
+    ??? caution "Disadvantages"
         With 4-5 passes required per biopsy, this additional step adds approximately 50 minutes to each procedure and requires the added cost of the pathologist or cytopathologist's time. Additionally, the cost of setting up a mobile pathology lab station can range from $75k-$200k.
 
 ### Tele-pathology
@@ -29,7 +29,7 @@ Larger hospitals employ tele-pathology tools to keep their pathologist in the la
 
     Located in `Houston, TX`
 
-    !!! caution "Disadvantages"
+    ??? caution "Disadvantages"
         Drawbacks to this solution include the cost of clinician time (8-10 minutes per sample) needed to prepare and evaluate the sample. As compared to Pathware, their pricing model is out of scope for much of Pathware's target market at $100k capital expense for the microscope, $200 per procedure in disposables, and $100 monthly subscription per user for their software.
 
 !!! quote ""
@@ -38,7 +38,7 @@ Larger hospitals employ tele-pathology tools to keep their pathologist in the la
 
     Located in `New York, NY`
 
-    !!! caution "Disadvantages"
+    ??? caution "Disadvantages"
         They do not provide a point-of-care device or otherwise provide slide adequacy assessment or evaluation services as a part of their product. They are a newer competitor to the marketplace and appear to be focused specifically on providing efficient workflow solutions.
 
 !!! quote ""
@@ -48,7 +48,7 @@ Larger hospitals employ tele-pathology tools to keep their pathologist in the la
 
     Located in `Carlsbad, CA`
 
-    !!! caution "Disadvantages"
+    ??? caution "Disadvantages"
         This adds 45 minutes to the workflow during a biopsy procedure. Image acquisition requires approximately 10 minutes. This solution still requires the time of a pathologist or cytotechnologist to prepare, stain, and evaluate the slide for adequacy.
 
 !!! quote ""
@@ -58,13 +58,11 @@ Larger hospitals employ tele-pathology tools to keep their pathologist in the la
 
     Located in `Marlborough, MA`
 
-    !!! caution "Disadvantages"
+    ??? caution "Disadvantages"
         This solution does not provide adequacy evaluations or the ability to scan and store slides and is applicable only to pap smear samples. Additionally, the equipment is massive and stationary in the laboratory keeping them from integrating at the point-of-care.
 
 ### Whole Slide Imaging Systems
-Whole Slide Scanning platforms are indirect competition as these technologies are laboratory-based and have no quality assessment component meaning that they do not apply to this current market need. Furthermore, they are well beyond the budget capabilities of most hospitals at $1MM per unit. See the folder on competition below.
-
-[INSERT SCANNER COMPARISON HERE]
+Whole Slide Scanning platforms are indirect competition: these technologies are laboratory-based and have no quality assessment component. These systems do not address to this market need and are well beyond the budget of most hospitals at `$1.0MM` per unit.
 
 !!! quote ""
     #### Leica Biosystems
@@ -73,7 +71,7 @@ Whole Slide Scanning platforms are indirect competition as these technologies ar
 
     Located in `Wetzlar, Germany`
 
-    !!! caution "Disadvantages"
+    ??? caution "Disadvantages"
         By definition, this is not a "whole slide" image (WSI) as it is only 15mmx15mm (~12% of the Bioptic Unit’s field of view). Furthermore, Aperio scanners rely on a method that involves highly sensitive moving equipment to scan and digitize the slide This method not only takes longer to produce the final image, it is also only able to image samples that are extremely flat due to the razor thin focal range. This tendency to fall in and out of focus makes it incapable of imaging cytology images without employing secondary imaging measures (e.g. z-stacking) which brings an additional time cost, exponentially larger file sizes, and higher equipment costs. While Aperio does offer a unit with “real-time” viewing to pathologists, this model tends to have delayed and clunky interfaces that do not fit into the normal workflow of how pathologists view and assess samples. Additionally, Aperio does not currently offer slide assessment as part of their scanner capabilities, meaning that it would require an additional pathologist to be readily available for tissue assessment every time a tissue sample is extracted.
 
 !!! quote ""
@@ -83,8 +81,10 @@ Whole Slide Scanning platforms are indirect competition as these technologies ar
 
     Located in `Best, Netherlands`
 
-    !!! caution "Disadvantage"   
+    ??? caution "Disadvantage"   
         These scanners are physically large (taking up approximately twelve cubic feet of space and weigh more than 120 kg). Storage of slides requires the separate acquisition and set up of data storage systems that must be maintained by trained technical personnel staffed by the individual institution. The large form factor also prevents these units from being a practical point-of-care device. Scanning speeds are only as fast as 3 minutes per slide and limited to histology samples due to the limitations imposed by their line imaging techniques which is outside of the scope of Pathware’s market segment. In addition, the cost of acquiring and setting up these units is approximately $1 million per unit which is well beyond the available budget for the majority of the market.
+
+[INSERT SCANNER COMPARISON HERE]
 
 [DETAILED ECOSYSTEM MAP]
 

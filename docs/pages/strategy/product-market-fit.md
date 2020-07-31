@@ -1,3 +1,13 @@
+## How is This Product Different?
+No company to date has fully automated the rapid on-site evaluation process. Pathware automates the image acquisition and subsequent analysis. Several companies have attempted to alleviate the financial burden that having a pathologist in the biopsy suite incurs and have implemented tele-pathology workflows but have failed to realize that having pathologists involved in such a routine task as ROSE, in any manner, is a financial strain. We have opted for full automation, from slide handling to image analysis, to quality assessment and file management; no one else has. A large part of this is due to the adaptation of NVIDIA’s latest GPU technology, which allows for an immense number of computer vision processes to be run simultaneously, effectively rendering analysis instantaneous. No other company has anywhere near the processing power they harnessed built into our scanning systems.
+
+The Bioptic unit has four main advantages over competitors to consider:
+
+1. The size of the unit will fit on a desktop work area – more manageable than a mobile cart of massive lab unit.
+2. The price of the unit (at $20K) is an order of magnitude less than other scanners (some running as high as $1MM).
+3. The time needed to process cytological samples is less than 5 minutes – far faster than current industry standards.
+4. The Bioptic System does not need stains or contrast agents to create a Whole Slide Image.
+
 !!! tip "The Future is FNA"
     At Pathware, we have created a stainless whole slide scanner that is able to image both histology and cytology samples. Being that the histology space is quickly becoming overcrowded with players like Philips and Leica, we have focused our efforts on improving the diagnostic utility of cytology samples where there are currently no competitors on the market. With the Bioptic™, we are able to standardize the FNA procedure regardless of staffing or geography of a hospital system. By enhancing the diagnostic utility of this minimally invasive technique, we are riding a wave of sentiment in the field of medicine: that minimally invasive practice is the future, much in the same way that we are seeing surgeries shift to a greater emphasis on laparoscopic procedures.
     
@@ -15,16 +25,6 @@ There are other biopsy techniques being developed that have the potential to dra
 Lastly, there are imaging techniques that are being developed to classify and diagnose tumors based on tags that are illuminated in an MRI or CT. These techniques are being presented as a way to circumvent the biopsy process and move straight into treatment. The challenge with this argument is that all of our therapeutic decisions are made on the cellular architecture and genomic level which would be lost in this technique. Additionally, you would be removing all profits of the pathology workflow. The pushback from these two factors cannot be overstated as the medical field prefers evolutionary change to revolutionary change to the workflow.
 
 In short, the field of pathology is about to experience a significant evolution on par with what we have already seen take place in the field of radiology. Today, all pathology slides are handled manually in the same way that radiologists used to hold x-rays up to a light. Our current approach to pathology is time consuming and labor intensive which is already over strained with an aging population and steadily declining pathology workforce. With 63% of pathologists planning on retiring in the next decade, and fewer medical students entering the field in the first place, we are about to reach a breaking point without proper support and intervention from computer-based decision support tools. Cytology is the most time, resource, and cost-effective method of diagnosis. As we have seen in other fields, this coming decade will see continued integration of automated tools to improve throughput and outcomes. We at Pathware are positioned to set the stage for the future diagnostic workflow as we work to make point-of-care pathology a reality.
-
-## How is This Product Different?
-No company to date has fully automated the rapid on-site evaluation process. Pathware automates the image acquisition and subsequent analysis. Several companies have attempted to alleviate the financial burden that having a pathologist in the biopsy suite incurs and have implemented tele-pathology workflows but have failed to realize that having pathologists involved in such a routine task as ROSE, in any manner, is a financial strain. We have opted for full automation, from slide handling to image analysis, to quality assessment and file management; no one else has. A large part of this is due to the adaptation of NVIDIA’s latest GPU technology, which allows for an immense number of computer vision processes to be run simultaneously, effectively rendering analysis instantaneous. No other company has anywhere near the processing power they harnessed built into our scanning systems.
-
-The Bioptic unit has four main advantages over competitors to consider:
-
-1. The size of the unit will fit on a desktop work area – more manageable than a mobile cart of massive lab unit.
-2. The price of the unit (at $20K) is an order of magnitude less than other scanners (some running as high as $1MM).
-3. The time needed to process cytological samples is less than 5 minutes – far faster than current industry standards.
-4. The Bioptic System does not need stains or contrast agents to create a Whole Slide Image.
 
 <!-- move em -->
 
