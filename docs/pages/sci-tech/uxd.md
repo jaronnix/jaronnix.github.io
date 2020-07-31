@@ -1,7 +1,5 @@
 # UI/UX
 
-Created: Nov 10, 2019 12:42 PM
-
 ## Clinical/Technical Workflow
 
 ---
