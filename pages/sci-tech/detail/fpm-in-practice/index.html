@@ -1,0 +1,1393 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Discover the go-to-market strategy of Pathware Inc, a medical technology startup headquartered in Seattle, Washington.">
+      
+      
+        <link rel="canonical" href="https://invest.pathware.com/pages/sci-tech/detail/fpm-in-practice/">
+      
+      
+        <meta name="author" content="Jaron Nix">
+      
+      <link rel="shortcut icon" href="../../../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.2">
+    
+    
+      
+        <title>Engineering Considerations - Pathware Series A</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.25b81cc6.min.css">
+      
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.80a78273.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter,+sans-serif;:300,400,400i,700%7CMenlo,+Monaco,+Lucida+Console,+Liberation+Mono,+DejaVu+Sans+Mono,+Bitstream+Vera+Sans+Mono,+Courier+New,+monospace;&display=fallback">
+        <style>body,input{font-family:"Inter, sans-serif;",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="pathware" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#engineering-considerations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://invest.pathware.com" title="Pathware Series A" class="md-header-nav__button md-logo" aria-label="Pathware Series A">
+      
+  <img src="../../../../images/mono-icon-inverse-sm.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Pathware Series A
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Engineering Considerations
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../market/problem/pathologist-shortage/" class="md-tabs__link">
+          The Market
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../analytics/" class="md-tabs__link">
+          The Product
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../strategy/sales/" class="md-tabs__link">
+          Strategy
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../Page 4.1" class="md-tabs__link">
+          The Team
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../models/business-model/" class="md-tabs__link">
+          Models
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../invest/ask-and-use/" class="md-tabs__link">
+          Investment Opportunity
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://invest.pathware.com" title="Pathware Series A" class="md-nav__button md-logo" aria-label="Pathware Series A">
+      
+  <img src="../../../../images/mono-icon-inverse-sm.png" alt="logo">
+
+    </a>
+    Pathware Series A
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../overview/mission/" title="Our Mission" class="md-nav__link">
+      Our Mission
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../overview/problem/" title="The Problem" class="md-nav__link">
+      The Problem
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../overview/solution/" title="The Solution" class="md-nav__link">
+      The Solution
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../overview/product/" title="The Product" class="md-nav__link">
+      The Product
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../overview/market/" title="The Market" class="md-nav__link">
+      The Market
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../overview/regulatory/" title="Regulatory Affairs" class="md-nav__link">
+      Regulatory Affairs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../overview/patent/" title="Intellectual Property" class="md-nav__link">
+      Intellectual Property
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../overview/revenue/" title="Our Revenue" class="md-nav__link">
+      Our Revenue
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../overview/competition/" title="Our Competition" class="md-nav__link">
+      Our Competition
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../overview/partners/" title="Our Partners" class="md-nav__link">
+      Our Partners
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../overview/leadership/" title="Our Management" class="md-nav__link">
+      Our Management
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../overview/roadmap/" title="Future Development" class="md-nav__link">
+      Future Development
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../overview/investment/" title="Ask & Use of Funds" class="md-nav__link">
+      Ask & Use of Funds
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      The Market
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="The Market" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        The Market
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14-1" type="checkbox" id="nav-14-1">
+    
+    <label class="md-nav__link" for="nav-14-1">
+      The Problem
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="The Problem" data-md-level="2">
+      <label class="md-nav__title" for="nav-14-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        The Problem
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../market/problem/pathologist-shortage/" title="A Declining Workforce" class="md-nav__link">
+      A Declining Workforce
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../market/problem/biopsy-failure/" title="Frequent Biopsy Failures" class="md-nav__link">
+      Frequent Biopsy Failures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../market/problem/diagnostic-errors/" title="Diagnostic Errors" class="md-nav__link">
+      Diagnostic Errors
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14-2" type="checkbox" id="nav-14-2">
+    
+    <label class="md-nav__link" for="nav-14-2">
+      Industry Trends
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Industry Trends" data-md-level="2">
+      <label class="md-nav__title" for="nav-14-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Industry Trends
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../market/trends/cancer/" title="Cancer" class="md-nav__link">
+      Cancer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../market/trends/biopsies/" title="Biopsies" class="md-nav__link">
+      Biopsies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../market/trends/digital-pathology/" title="Digital Pathology" class="md-nav__link">
+      Digital Pathology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../market/trends/physicians/" title="Pathologists" class="md-nav__link">
+      Pathologists
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../market/rose/" title="Rapid On-site Evaluation" class="md-nav__link">
+      Rapid On-site Evaluation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../market/market-us/" title="Domestic Market Opportunity" class="md-nav__link">
+      Domestic Market Opportunity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../market/market-global/" title="Global Market Opportunity" class="md-nav__link">
+      Global Market Opportunity
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      The Product
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="The Product" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        The Product
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analytics/" title="Tissue Adequacy Assessment" class="md-nav__link">
+      Tissue Adequacy Assessment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../fpm/" title="Ptychographic Microscopy" class="md-nav__link">
+      Ptychographic Microscopy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../uxd/" title="User Experience Design" class="md-nav__link">
+      User Experience Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../digital-stain/" title="PhaseStain" class="md-nav__link">
+      PhaseStain
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16" type="checkbox" id="nav-16">
+    
+    <label class="md-nav__link" for="nav-16">
+      Strategy
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Strategy" data-md-level="1">
+      <label class="md-nav__title" for="nav-16">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Strategy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../strategy/sales/" title="Sales" class="md-nav__link">
+      Sales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16-2" type="checkbox" id="nav-16-2">
+    
+    <label class="md-nav__link" for="nav-16-2">
+      Go-to-Market
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Go-to-Market" data-md-level="2">
+      <label class="md-nav__title" for="nav-16-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Go-to-Market
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../strategy/product-market-fit/" title="Product-market Fit" class="md-nav__link">
+      Product-market Fit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../strategy/competition/" title="Competition" class="md-nav__link">
+      Competition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../strategy/trends/" title="Market Trends" class="md-nav__link">
+      Market Trends
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../strategy/regulatory/" title="Regulatory" class="md-nav__link">
+      Regulatory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16-4" type="checkbox" id="nav-16-4">
+    
+    <label class="md-nav__link" for="nav-16-4">
+      Intellectual Property
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Intellectual Property" data-md-level="2">
+      <label class="md-nav__title" for="nav-16-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Intellectual Property
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../strategy/patents/" title="Patents" class="md-nav__link">
+      Patents
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../strategy/trademarks/" title="Trademarks" class="md-nav__link">
+      Trademarks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../strategy/proprietary-data/" title="Data" class="md-nav__link">
+      Data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16-5" type="checkbox" id="nav-16-5">
+    
+    <label class="md-nav__link" for="nav-16-5">
+      Future Product Development
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Future Product Development" data-md-level="2">
+      <label class="md-nav__title" for="nav-16-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Future Product Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Bioptic Platform Expansion" title="None" class="md-nav__link">
+      None
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Bioptic Regulatory Roadmap" title="None" class="md-nav__link">
+      None
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Company Vision" title="None" class="md-nav__link">
+      None
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-17" type="checkbox" id="nav-17">
+    
+    <label class="md-nav__link" for="nav-17">
+      The Team
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="The Team" data-md-level="1">
+      <label class="md-nav__title" for="nav-17">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        The Team
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Page 4.1" title="None" class="md-nav__link">
+      None
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Page 4.2" title="None" class="md-nav__link">
+      None
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Page 4.3" title="None" class="md-nav__link">
+      None
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-18" type="checkbox" id="nav-18">
+    
+    <label class="md-nav__link" for="nav-18">
+      Models
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Models" data-md-level="1">
+      <label class="md-nav__title" for="nav-18">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Models
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../models/business-model/" title="Business Model" class="md-nav__link">
+      Business Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../models/financials/" title="Financials" class="md-nav__link">
+      Financials
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../models/exit-scenarios/" title="Exit Scenarios" class="md-nav__link">
+      Exit Scenarios
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-19" type="checkbox" id="nav-19">
+    
+    <label class="md-nav__link" for="nav-19">
+      Investment Opportunity
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Investment Opportunity" data-md-level="1">
+      <label class="md-nav__title" for="nav-19">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Investment Opportunity
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../invest/ask-and-use/" title="Ask and Use" class="md-nav__link">
+      Ask and Use
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-19-2" type="checkbox" id="nav-19-2">
+    
+    <label class="md-nav__link" for="nav-19-2">
+      Detailed Uses
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Detailed Uses" data-md-level="2">
+      <label class="md-nav__title" for="nav-19-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Detailed Uses
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../invest/use-of-funds-operations/" title="Operations" class="md-nav__link">
+      Operations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../invest/use-of-funds-development/" title="Research & Development" class="md-nav__link">
+      Research & Development
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../invest/use-of-funds-general/" title="General & Administrative" class="md-nav__link">
+      General & Administrative
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../invest/use-of-funds-marketing/" title="Sales & Marketing" class="md-nav__link">
+      Sales & Marketing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pixel-intensity" class="md-nav__link">
+    Pixel Intensity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#led-positioning-including-defocus" class="md-nav__link">
+    LED Positioning (including Defocus)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#led-intensity-fluctuations" class="md-nav__link">
+    LED Intensity Fluctuations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aberration-correction" class="md-nav__link">
+    Aberration Correction
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="engineering-considerations">Engineering Considerations</h1>
+<h3 id="pixel-intensity">Pixel Intensity</h3>
+<p>In image processing, normalization is a process that changes the range of pixel intensity values. Applications include photographs with poor contrast due to glare, for example. Normalization is sometimes called contrast stretching or histogram stretching. In more general fields of data processing, such as digital signal processing, it is referred to as dynamic range expansion.</p>
+<p>[IMAGE?]</p>
+<p>Left: 40% decrease in gray scale intensity values, Center: Original Image, Right: 40% increase in gray scale intensity values</p>
+<p>The purpose of dynamic range expansion in the various applications is usually to bring the image, or other type of signal, into a range that is more familiar or normal to the senses, hence the term normalization. Often, the motivation is to achieve consistency in dynamic range for a set of data, signals, or images to avoid mental distraction or fatigue. For example, a newspaper will strive to make all of the images in an issue share a similar range of grayscale. The linear normalization of a grayscale digital image is performed according to the formula:</p>
+<p>$$I_N = (I - Min)\frac{newMax-newMin}{Max-Min}+newMin$$</p>
+<p>For example, if the intensity range of the image is 50 to 180 and the desired range is 0 to 255 the process entails subtracting 50 from each of pixel intensity, making the range 0 to 130. Then each pixel intensity is multiplied by 255/130, making the range 0 to 255.</p>
+<p>Normalization might also be non linear, this happens when there isn't a linear relationship between <strong><em>I</em></strong> and I(N)</p>
+<h3 id="led-positioning-including-defocus">LED Positioning (including Defocus)</h3>
+<p>Small changes in angle become large when they are propagated to large defocus depths, leading to reduced resolution and reconstruction artifacts. For example, using a well-aligned LED array will be unable to reconstruct high-resolution features of a resolution target defocused beyond 30 μm due to angle misalignment. Using the same data set, implementation of a self-calibration algorithm allows for reconstruction of high-resolution features even when there is up to 70 μm off-focus.</p>
+<p>[IMAGE?]</p>
+<p>Adapted from Waller, et al. Even small calibration errors degrade FPM resolution severely when defocus distances are large. Experimental schematic for a USAF target placed at varying defocus distances.</p>
+<p>Because iterative angle estimation (including SC calibration) unfeasibly increases the computational complexity of FPM, only bright field calibration is necessary.</p>
+<p>[IMAGES?]</p>
+<h3 id="led-intensity-fluctuations">LED Intensity Fluctuations</h3>
+<p>One of major systematic noises in FP settings comes from the illumination uncertainty of the
+multiple LED elements, a counter problem to the positional uncertainty in conventional
+ptychography settings. Specifically, this challenge comes from four aspects: 1) illumination
+intensities and incident angles of different LED elements are all different. We need to
+calibrate the intensities of different LED elements and measure their angular emission
+characteristics. 2) We also need to characterize the angular response of the light-collecting
+optics as well as the pixel point-spread-function of the image sensor. 3) In wide field-of-view settings, illumination intensity varies spatially across the entire field-of-view. Such spatial variations are also different for different LED elements. 4) Illumination intensities of different LED elements behave differently over time. In our FP prototype, we observe ~40% intensity drift for certain LED elements, over a time period of several hours. Note that, it is possible to alleviate the illumination uncertainty problem by developing a sophisticated calibration procedure with real-time intensity monitoring setups and associated time-synchronized electronics. However, this may require a substantial amount of maintenance efforts. As a result, adaptive system correction for FPM  involves the evaluation of an image-quality metric at each iteration step, followed by the estimation of an improved system correction. This optimization process is repeated until the image-quality metric is maximized.</p>
+<p>[IMAGE?]</p>
+<p>The flow chart of the adaptive Fourier ptychographic algorithm for intensity correction.</p>
+<h3 id="aberration-correction">Aberration Correction</h3>
+<p>Generally, the aberrations in an optical system can be decomposed into a set of Zernike polynomials, each with a different coefficient. Introduced by the Dutch scientist Fritz Zernike (Nobel prize laureate for the invention of phase-contrast microscope) in 1934, these polynomials can be applied to describe mathematically 3D wavefront deviation from what can be constructed as a plane - i.e. unit circle - of its zero mean, defined as a surface for which the sum of deviations on either side - opposite in sign one to another - equals zero. Each polynomial describes specific form of surface deviation; their combined sum can produce a large number of more complex surface shapes, that can be fit to specific forms of wavefront deviations (aberrations). In principle, by including sufficient number of Zernike polynomials (commonly referred to as terms), any wavefront deformation can be described to a desired degree of accuracy.</p>
+<p>The usual way of applying Zernike terms is to the specific wavefront shape, which is "decomposed" to a needed number of terms in order to determine:</p>
+<ol>
+<li>
+<p>The main forms of contributing deviations, and</p>
+</li>
+<li>
+<p>The overall magnitude of deformation</p>
+</li>
+</ol>
+<p>For simple aberration forms, such as pure Siedel aberrations, a single polynomial suffices. Describing more complex aberrations, such as, for instance, seeing error, as well as wavefronts formed by actual (i.e. imperfect) surfaces, requires an expanded set of Zernike polynomials.</p>
+<p>Zernike polynomials define deviations from zero mean as a function of the radial point height ρ in the unit-radius circle and its angular circle coordinate θ, which is the setting of a microscope exit pupil, in which the wavefront form is evaluated. In polar and Cartesian coordinates, respectively, the radial component is ρ² = x² + y², with 0 ≤ ρ, x, y ≤ 1. The common convention for the angular coordinate θ varies with the field; in ophthalmology, it is counterclockwise from x+ toward y+ axis (OSA recommended), thus ρ = x/cosθ = y/sinθ. In general optics, it is often different. Malacara's convention is clockwise from y+ to x+ axis, thus ρ = x/sinθ = y/cosθ, and Mahajan's convention (Optical imaging and aberrations) applied here to the conventional aberration functions is counterclockwise from y+ to x-, hence with the same radial-to-angular relations as Malacara's. The polynomials are orthogonal (i.e. their values change independently) over the circle of unit radius. Due to this attribute, these aberration forms are termed orthogonal, or Zernike aberrations.</p>
+<p>[ABBERATION CORRECTION IMAGE]</p>
+<p>As mentioned, zero mean is defined as a surface for which the sum of wavefront deviations to either side is zero. That is important conceptual difference vs. standard wavefront error, which expresses deviations from a reference sphere (also commonly constructed as a circle). Hence the polynomial, which is a product of its radial variable in <code>ρ</code> and angular variable in <code>θ</code>, has zero value at the intersection of the wavefront and its zero mean. Zero mean differs from the reference sphere for balanced primary spherical aberration and defocus, while coinciding with it for balanced primary astigmatism. coma and balanced 6th/4th order spherical. As a result, the form of polynomial is different from the classical aberration function for the former three, while identical (except for the normalization factor) for the latter two.</p>
+<p>The polynomial normalization factor fulfils the formal requirement that the radial polynomial portion equals 1 for ρ=1. For instance, the deviation from zero mean for primary spherical aberration – whose polynomial only has the radial component – is given by ρ4-ρ2+1/6; thus, its normalization factor is 6, and the corresponding Zernike circle polynomial is 6ρ4-6ρ2+1 (this normalization to unit radius shouldn't be confused with normalization to unit variance, described ahead).</p>
+<p>Orthogonality of Zernike polynomials creates the possibility to combine as many different surfaces as needed to approximate the form of wavefront deviation with desired accuracy. It allows expressing separate contributions of various forms of aberrations - including any chosen extent of the higher order forms - and obtaining the combined variance as the sum of individual aberration variances. Also, the polynomials can be - and routinely are - scaled to unit variance over the circle radius for all aberration forms, so that their combined form can be determined directly by adding up their expansion coefficients, which determine the specific magnitude for each aberration form. Wavefront is described as a sum of Zernike aberration terms.</p>
+<p><a href="Engineering%20Considerations%202fe1edd9c3174398963c77873da67323/Zernike%20Wavefront%20Figure%20ebf578c1f0d745d2ace1f00ed8fb8481.md">Zernike Wavefront Figure</a></p>
+<p>In the nutshell, the normalization factor N is chosen so that a product of the sum of two extreme values of the polynomial (absolute values, determining the relative magnitude of P-V deviation) and normalization factor equals the P-V-to-RMS wavefront error ratio for the aberration. Hence, multiplying this product with the expansion coefficient - which equals the RMS error for given aberration-yields the P-V wavefront error corresponding to the coefficient. For any value of the polynomial for given pupil coordinate ρ, a product with the normalization factor and expansion coefficient yields, as already mentioned, the wavefront deviation from zero mean for that particular pupil coordinate. As with the standard aberrations, the wavefront error, either P-V (as a direct optical path difference) or RMS, is directly related - although not necessarily identical - to the phase error. The absolute value of Zernike expansion coefficient z(nm) is identical to the RMS wavefront error; since the coefficient does express positive and negative deviations, the sum of coefficients for all Zernike terms used to fit particular wavefront gives its overall RMS wavefront error (i.e. standard deviation), and its square equals the wavefront variance.</p>
+<p><a href="Engineering%20Considerations%202fe1edd9c3174398963c77873da67323/Aberration%20Reconstruction%20Figure%206ae4ce5d73ae423aa47a543697d175a2.md">Aberration Reconstruction Figure</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/vendor.592d4e23.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.806ca5c4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../../../assets/javascripts/worker/search.01088dc6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../../javascript/extra.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,29 @@
+[data-md-color-scheme="pathware"] {
+  --md-primary-fg-color:        #0d1a26;
+  --md-text-link-color:         #f33;
+  --md-typeset-a-color:         #0d1a26;
+  --md-accent-fg-color:         #3c32e6;
+}
+
+.md-nav__link:hover {
+  color: #f33;
+}
+
+.md-nav a:hover {
+  color: #f33;
+}
+
+.md-typeset h1 {
+  color: #4b4b4b;
+  margin: 0 0 1.2rem;
+}
+
+.md-typeset a {
+  color:  rgb(3, 102, 214);
+  }
+
+.md-typeset .md-button {
+  border: 0.08rem solid currentColor;
+  font-weight: 500;
+  padding: 0.28rem 1.6rem;
+}
